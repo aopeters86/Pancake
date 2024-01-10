@@ -5,10 +5,11 @@ public class BatterBag {
 	/*
 	 * this will need some way to send back an int 
 	 */
+	static int currentQty;
 	
 	public static int batterBag(){
 		
-		int batterQty = ((int) (Math.random() * 3) + 1);
+		int batterQty = ((int) (Math.random() * 100) + 1);
 
 		
 		if(batterQty < 2) {
@@ -16,8 +17,16 @@ public class BatterBag {
 		
 		}
 		
+		currentQty = batterQty;
+		
 		return batterQty;
 	}
+	
+//	public static int changeBatterBag(int currentQty) {
+//		
+//		
+//		
+//	}
 	
 	
 	

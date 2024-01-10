@@ -1,26 +1,22 @@
 package machine;
-import java.util.Scanner;
+import java.io.FileNotFoundException;
 
-import batter.BatterBag;
 import initialization.BatterInitialization;
 import initialization.MachineInitialization;
 import login.Login;
 
-public class PowerOnPancakeMaker implements MachineInitialization{
+public class PowerOnPancakeMaker implements MachineInitialization, BatterInitialization {
 	
-	public PowerOnPancakeMaker(boolean power){	
+	int currentQty;
+		
+	public PowerOnPancakeMaker(boolean power) throws FileNotFoundException{	
 
 		getPower(power);
 		getConveyorStatus(power);
 		getHeatElementStatus(power);
 		getBatterSensorStatus(power);
-//		BatterBag newBag = new BatterBag();
-		int batterLevel = BatterBag.batterBag();
-		System.out.println("\nTotal pancakes left in bag: "+ batterLevel);
-		
-		
+		this.currentQty = getBatterStatus();
 		Login.login();
-		
 		//after login i need a way to have a selecton or 
 		
 		//100 pancakes is the array or whatever starting qty is, one is printed as a 'O'

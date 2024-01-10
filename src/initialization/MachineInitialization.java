@@ -52,11 +52,15 @@ public interface MachineInitialization {
 		System.out.println("\nInitializing batter sensor check.....");
 		try {
 			Thread.sleep(1000);// simulates an initialization, heat checks and conveyer checks etc.
-			System.out.println("Batter level sensor check good...");
+			System.out.println("Batter level sensor check good...\n");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 	}
+	
+	
+	
+	
 	
 //	default void //make a method to set and get the qty, which will update something inside poweronpancake as an option 
 //	made changes here: JP

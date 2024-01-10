@@ -2,7 +2,21 @@ package initialization;
 
 public interface BatterInitialization {
 	
-	static void getBatterStatus(boolean power) {
 		
+	default int getBatterStatus() {
+		int batterQty = ((int) (Math.random() * 100) + 1);
+		if(batterQty < 3){
+			System.out.println("\nBatter qty is below 3, changing batter bag");
+			return newBag();
+		}
+		System.out.println("Power up batter qty is " + batterQty);
+		return batterQty;
 	}
+	
+	default int newBag(){
+		return 100;
+	}
+	
+	
+	
 }

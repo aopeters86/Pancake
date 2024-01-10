@@ -1,10 +1,12 @@
 package test;
 
+import java.io.FileNotFoundException;
+
 import machine.PowerOnPancakeMaker;
 
 public class tester {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
 		// TODO Auto-generated method stub
 		
 		//test machine with power
