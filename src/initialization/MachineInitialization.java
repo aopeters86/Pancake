@@ -58,7 +58,7 @@ public interface MachineInitialization {
 		}
 	}
 	
-	default void //make a method to set and get the qty, which will update something inside poweronpancake as an option 
-	
+//	default void //make a method to set and get the qty, which will update something inside poweronpancake as an option 
+//	made changes here: JP
 	
 }
