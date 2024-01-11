@@ -20,8 +20,9 @@ public class Run implements BatterInitialization{
 		runQty = qty;
 		Scanner mode = new Scanner(System.in);
 		System.out.println("Choose a mode: \n1 for Single\n2 for 3 round burst\n3 for full auto\n");
-		int selectmode = mode.nextInt();
-		switch (selectmode) {
+		int selectMode = mode.nextInt();
+		if(selectMode == 1|| selectMode == 2||selectMode == 3) {
+		switch (selectMode) {
 		case 1:
 			single();
 			break;
@@ -32,6 +33,10 @@ public class Run implements BatterInitialization{
 			fullAuto();
 			break;
 		}
+	}else {
+		selectMode(qty);
+	}
+		
 	}
 
 	private static void single() {
