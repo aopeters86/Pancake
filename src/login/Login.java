@@ -3,59 +3,59 @@ package login;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class Login {
+import initialization.LoginSatisfied;
+import initialization.MachineInitialization;
+
+public class Login implements MachineInitialization{
 	
-//	public String user;
+
+	private static String userName = "";
 	
 	public static void login() throws FileNotFoundException {
 		Scanner input = new Scanner(System.in);
 		System.out.println("Enter your employee ID to continue");
 		String userIn = input.nextLine();	
-//		this.user = userIn;
-		boolean unauth =readFile(userIn);//so far this returns a boolean
-		if(unauth==false) {
-			login();
+		boolean auth =readFile(userIn);
+		if(auth==false) {
+			reTry();
+		}else {
+			LoginSatisfied.userSelection(auth, userName);
 		}
+		
 	}
-	//change below to private after test complete, remove static
 	private static boolean readFile(String user) throws FileNotFoundException {
 		
 		java.io.File file = new java.io.File("users.txt");
 		Scanner rootfile = new Scanner(file).useDelimiter("/t");
-		String userIn = "";
 		boolean returnBool = false;
-		
-		
 		while(rootfile.hasNextLine()) {
 			String linein = rootfile.nextLine();
 			String[] empid = linein.split("\t");
 			if((empid.length == 2 && empid[0].equals(user))) {
 				returnBool = true;
-				userIn = empid[1];
-				int returnNum = Integer.valueOf(empid[0]);
-				System.out.println("Welcome to the Pancake Maker 3000 " + userIn);
-				
-				rootfile.close();
-				return returnBool;
+				userName = empid[1];				
 				}
-			
-			
-		
-		//else return null
 	}
-		System.out.println("Unauthorized User, returning to login");
+		if(returnBool == false) {
+		reTry();
+		}
 		rootfile.close();
-//		login();
 		return returnBool;
-	
-	
-	
-	
-	
+	}
+
+	private static String reTry() throws FileNotFoundException {
+		System.out.println("1 to try again, 2 to power off");
+		Scanner powerOff = new Scanner(System.in);
+		int userIn = powerOff.nextInt();
+		if(userIn == 1) {
+			login();
+		}
+		if(userIn == 2) {
+			MachineInitialization.powerDown();
+		}
+		if(userIn != 1 || userIn != 2) {
+			reTry();
+		}
+		return null;
 	}
 }
-
-
-
-//use path to find the file in the root
-//		Path filePath = Paths.get("users.txt");
