@@ -17,7 +17,7 @@ public class Login implements MachineInitialization{
 		String userIn = input.nextLine();	
 		boolean auth =readFile(userIn);
 		if(auth) {
-			LoginSatisfied.userSelection(auth, userName); //?this needs to be moved somewhere else
+			LoginSatisfied.userSelection(auth, userName);
 		}
 		if(!auth) {
 			reTry();
@@ -39,7 +39,6 @@ public class Login implements MachineInitialization{
 		if(userIn != 1 && userIn != 2) {
 			reTry();
 		}
-//		return null;
 	}
 
 	private static boolean readFile(String user) throws FileNotFoundException {
@@ -56,9 +55,6 @@ public class Login implements MachineInitialization{
 				break;
 				}
 	}
-//		if(!returnBool) {
-//		reTry();
-//		}
 		rootfile.close();
 		return returnBool;
 	}

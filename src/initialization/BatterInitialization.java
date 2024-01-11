@@ -13,7 +13,7 @@ public interface BatterInitialization {
 		return batterQty;
 	}
 	
-	default int newBag(){
+	 static int newBag(){
 		return 100;
 	}
 	

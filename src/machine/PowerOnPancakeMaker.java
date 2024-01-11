@@ -4,13 +4,16 @@ import java.io.FileNotFoundException;
 import initialization.BatterInitialization;
 import initialization.MachineInitialization;
 import login.Login;
+import start.Run;
 
-public class PowerOnPancakeMaker implements MachineInitialization, BatterInitialization{
+public class PowerOnPancakeMaker extends Run implements MachineInitialization, BatterInitialization{
 	
-	int currentQty;
+	public static int currentQty;
 		
 	public PowerOnPancakeMaker(boolean power) throws FileNotFoundException{	
 		MachineInitialization.powerOn(power);
 		boolean startUp = Login.login();
+		currentQty = getBatterStatus();		
+		selectMode(currentQty);
 	}	
 }
