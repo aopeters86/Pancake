@@ -23,3 +23,6 @@ after login i need a way to have a selecton or
 		change batterbag random stuff, dont need to divide etc..
 		login for pancake maker, use hashmap or binary search tree?? cool for dsa
 		change sensor check fail to reset the check, or rerun the check, not system exit
+		
+
+HOW TO MONITOR BAG AS ITS MAKING THEM?

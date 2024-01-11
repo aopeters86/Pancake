@@ -1,22 +1,26 @@
 package initialization;
 
+//import java.lang.System.Logger;
+import java.util.logging.Logger;
 public interface MachineInitialization {
+	
+	Logger logger = Logger.getLogger(MachineInitialization.class.getName());
 
-	default void getPower(boolean power) {
+	static void getPower(boolean power) {
 		if (power == false) {
 			System.out.println("This would not do anything, simulates no power");
 			System.exit(0);
 		}
 		System.out.println("Initializing power check.....");
 		try {
-			Thread.sleep(1000);// simulated
+			Thread.sleep(1000);
 			System.out.println("Power check good...");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 	}
 
-	default void getConveyorStatus(boolean power) {
+	static void getConveyorStatus(boolean power) {
 		if (power == false) {
 			System.out.println("Conveyor check failed");
 			System.exit(0);
@@ -30,7 +34,7 @@ public interface MachineInitialization {
 		}
 
 	}
-	default void getHeatElementStatus(boolean power) {
+	static void getHeatElementStatus(boolean power) {
 		if (power == false) {
 			System.out.println("Heat element check failed");
 			System.exit(0);
@@ -44,7 +48,7 @@ public interface MachineInitialization {
 		}
 	}
 
-	default void getBatterSensorStatus(boolean power) {
+	static void getBatterSensorStatus(boolean power) {
 		if (power == false) {
 			System.out.println("Batter level sensor check failed");
 			System.exit(0);
@@ -58,9 +62,14 @@ public interface MachineInitialization {
 		}
 	}
 	
-	static void powerDown() {
+	static void powerOff() {
 		System.out.println("Powering Down....");
 		System.exit(0);
+	}
+	
+	static void powerOn(boolean power) {
+//		logger.info("Power On");
+		System.out.println("Power on....");
 	}
 	
 }

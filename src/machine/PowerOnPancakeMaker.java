@@ -10,12 +10,7 @@ public class PowerOnPancakeMaker implements MachineInitialization, BatterInitial
 	int currentQty;
 		
 	public PowerOnPancakeMaker(boolean power) throws FileNotFoundException{	
-
-		getPower(power);
-		getConveyorStatus(power);
-		getHeatElementStatus(power);
-		getBatterSensorStatus(power);
-		this.currentQty = getBatterStatus();
-		Login.login();
+		MachineInitialization.powerOn(power);
+		boolean startUp = Login.login();
 	}	
 }
