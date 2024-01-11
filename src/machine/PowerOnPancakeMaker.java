@@ -11,7 +11,10 @@ public class PowerOnPancakeMaker extends Run implements MachineInitialization, B
 	public static int currentQty;
 		
 	public PowerOnPancakeMaker(boolean power) throws FileNotFoundException{	
-		MachineInitialization.powerOn(power);
+		if(!power) {
+			System.exit(0);
+		}
+		MachineInitialization.powerOn();
 		boolean startUp = Login.login();
 		currentQty = getBatterStatus();		
 		selectMode(currentQty);

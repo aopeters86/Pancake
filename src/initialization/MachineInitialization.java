@@ -67,7 +67,7 @@ public interface MachineInitialization {
 		System.exit(0);
 	}
 	
-	static void powerOn(boolean power) {
+	static void powerOn() {
 //		logger.info("Power On");
 		System.out.println("Power on....");
 	}
