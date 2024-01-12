@@ -40,17 +40,22 @@ public class Run implements BatterInitialization{
 	}
 
 	private static void single() {
-		System.out.println(runQty);
+//		System.out.println(runQty);
 		System.out.println("Here comes your pancake:\n\nO");
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		runQty -= 1;
-		System.out.println(runQty + " Pancakes left\n");
+		System.out.println("\n" + runQty + " Pancakes left\n");
 		endOfRun();
 
 	}
 
 	private static void threeRoundBurst() {
-		System.out.println(runQty);
-		System.out.println("Here comes your three pancakes\n");
+//		System.out.println(runQty);
+		System.out.println("\nHere comes your three pancakes\n");
 		for (int i = 0; i < 3; i++) {
 			System.out.print("O ");
 			try {
@@ -61,7 +66,7 @@ public class Run implements BatterInitialization{
 			}
 		}
 		runQty -=3;//update after loop
-		System.out.println(runQty + " Pancakes left\n");
+		System.out.println("\n"+runQty + " Pancakes left\n");
 		endOfRun();
 	}
 
@@ -83,9 +88,10 @@ public class Run implements BatterInitialization{
 	}
 
 	private static void endOfRun() {
-		if(runQty <= 3) {
+		if(runQty < 3) {
 			runQty = BatterInitialization.newBag();
 		}
+		System.out.println("You can make "+ runQty +" pancakes\n");
 		Scanner end1 = new Scanner(System.in);
 		System.out.println("Enjoy your pancake(s), select 1 to make more or 2 to power off");
 		int userIn = end1.nextInt();
