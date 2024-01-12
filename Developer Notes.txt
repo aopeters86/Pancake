@@ -26,3 +26,6 @@ after login i need a way to have a selecton or
 		
 
 HOW TO MONITOR BAG AS ITS MAKING THEM?
+
+
+Added .jar files for NLP, change mode selection to incorporate sentiment on how hungry you are using natural language processing... More to follow 
