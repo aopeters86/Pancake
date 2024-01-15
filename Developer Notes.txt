@@ -5,24 +5,12 @@ some type of admin? possibly that can add more users to the list see below line
 from Login Class
 final private String admin = "IT";
 
-How to search the file faster, instead of iterating with File class
+How to search the file faster, instead of iterating with File class? big deal to me
 
-test machine with 2 pancakes - working
-		
-test machine with only one pancake - finish cooking, throw onlyonepancake error, refill
-		
-test machine no pancakes throw empty error, only works if there is power
 
-how to approach errors involving conveyor no power etc... maybe make a class
-
-after login i need a way to have a selecton or 
-		
-		100 pancakes is the array or whatever starting qty is, one is printed as a 'O'
-		
-		single, 3 rd burst, full auto
-		change batterbag random stuff, dont need to divide etc..
-		login for pancake maker, use hashmap or binary search tree?? cool for dsa
-		change sensor check fail to reset the check, or rerun the check, not system exit
+change sensor check fail to reset the check, or rerun the check, not system exit
 		
 
 HOW TO MONITOR BAG AS ITS MAKING THEM?
+also
+consider reading in previous state of batter bag

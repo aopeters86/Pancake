@@ -1,13 +1,13 @@
 package initialization;
 
-//import java.lang.System.Logger;
 import java.util.logging.Logger;
+
 public interface MachineInitialization {
 	
 	Logger logger = Logger.getLogger(MachineInitialization.class.getName());
 
 	static void getPower(boolean power) {
-		if (power == false) {
+		if (!power) {
 			System.out.println("This would not do anything, simulates no power");
 			System.exit(0);
 		}
@@ -64,12 +64,7 @@ public interface MachineInitialization {
 	
 	static void powerOff() {
 		System.out.println("Powering Down....");
+		logger.info("Power off");
 		System.exit(0);
-	}
-	
-	static void powerOn() {
-//		logger.info("Power On");
-		System.out.println("Power on....");
-	}
-	
+	}	
 }
