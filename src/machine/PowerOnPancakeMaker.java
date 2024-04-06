@@ -9,8 +9,14 @@ import start.Run;
 public class PowerOnPancakeMaker extends Run implements MachineInitialization, BatterInitialization{
 	
 	public static int currentQty;
+	
+	public void on() throws FileNotFoundException {
+		PowerOn(true);
+	}
 		
-	public PowerOnPancakeMaker(boolean power) throws FileNotFoundException{	
+	private void PowerOn(boolean power) throws FileNotFoundException{	
+//		public PowerOnPancakeMaker(boolean power) throws FileNotFoundException{	
+		
 		if(!power) {
 			System.exit(0);
 		}

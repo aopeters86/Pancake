@@ -64,6 +64,7 @@ public interface MachineInitialization {
 	
 	static void powerOff() {
 		System.out.println("Powering Down....");
+		logger.info("Power off");
 		System.exit(0);
 	}
 	
