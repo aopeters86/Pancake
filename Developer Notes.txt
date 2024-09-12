@@ -26,3 +26,5 @@ after login i need a way to have a selecton or
 		
 
 HOW TO MONITOR BAG AS ITS MAKING THEM?
+
+adding database
