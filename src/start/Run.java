@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import initialization.BatterInitialization;
 import initialization.MachineInitialization;
+import test.tester;
 
 public class Run implements BatterInitialization{
 	static int runQty;
@@ -49,7 +50,7 @@ public class Run implements BatterInitialization{
 		for (int i = 0; i < 3; i++) {
 			System.out.print("O ");
 			try {
-				Thread.sleep(1000);
+				Thread.sleep(100);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -66,7 +67,7 @@ public class Run implements BatterInitialization{
 		for (int i = 0; i < runQty; i++) {
 			System.out.print("O ");
 			try {
-				Thread.sleep(1000);
+				Thread.sleep(100);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -88,6 +89,7 @@ public class Run implements BatterInitialization{
 			selectMode(runQty);
 		}
 		if (userIn == 2) {
+			tester.sentimentGetter();
 			MachineInitialization.powerOff();
 		}
 		

@@ -1,6 +1,10 @@
 
 Developer Read Me
 
+select 1 to make more or time out to default welcome to pancake maker and choose a mode
+
+
+
 some type of admin? possibly that can add more users to the list see below line
 from Login Class
 final private String admin = "IT";
