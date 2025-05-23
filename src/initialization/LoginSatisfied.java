@@ -1,6 +1,6 @@
 package initialization;
 
-import start.Run;
+import runniing.Run;
 
 public class LoginSatisfied extends Run{
 	

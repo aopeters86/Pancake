@@ -1,4 +1,4 @@
-package start;
+package runniing;
 
 import java.util.Scanner;
 
@@ -9,6 +9,12 @@ import test.tester;
 public class Run implements BatterInitialization{
 	static int runQty;
 
+	
+	
+	
+	//this needs to be separated into a start mode, and maintenance mode, 
+//	then the select modes below can be the user interface, but anything after that will require a log in again
+//	select mode should choose run or maintenance
 	public static void start(boolean loginauthorized, boolean power) {
 		if (loginauthorized && power) {
 			MachineInitialization.getConveyorStatus(power);
@@ -57,7 +63,7 @@ public class Run implements BatterInitialization{
 			}
 		}
 		runQty -=3;//update after loop
-		System.out.println(runQty + " Pancakes left\n");
+		System.out.println("\n" + runQty + " Pancakes left\n");
 		endOfRun();
 	}
 
@@ -83,15 +89,20 @@ public class Run implements BatterInitialization{
 			runQty = BatterInitialization.newBag();
 		}
 		Scanner end1 = new Scanner(System.in);
-		System.out.println("Enjoy your pancake(s), select 1 to make more or 2 to power off");
+		System.out.println("Enjoy your pancake(s), select 1 to make more 2 to leave a review");
 		int userIn = end1.nextInt();
 		if (userIn == 1) {
 			selectMode(runQty);
 		}
+		//this needs to now take user input as a string, to ask for a review
 		if (userIn == 2) {
-			tester.sentimentGetter("The tacos were bad all");
+//			call another class, 
+			
+			
+			
+//			tester.sentimentGetter("The tacos were bad all");
 //					+ " were very good but the overall value was ok");
-			MachineInitialization.powerOff();
+//			MachineInitialization.powerOff();
 		}
 		
 		if(userIn != 1 || userIn != 2) {
