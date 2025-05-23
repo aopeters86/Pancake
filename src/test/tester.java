@@ -20,7 +20,10 @@ public class tester {
 		
 		PowerOnPancakeMaker  newPCM1 = new PowerOnPancakeMaker();
 		newPCM1.on();//on switch
-		sentimentGetter();
+//		String userInput = 
+		
+		
+//		sentimentGetter("These are great tacos!");
 		
 		
 	
@@ -29,15 +32,16 @@ public class tester {
 
 	
 
-	public static void sentimentGetter() {
+	public static void sentimentGetter(String text) {
 
 		Properties props = new Properties();
 		props.setProperty("annotators", "tokenize, ssplit, pos, lemma, ner, parse, sentiment");
 		StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
-		String text = "I love this product! It's amazing.";
+//		String text = "I love this product! It's amazing.";
 		Annotation document = new Annotation(text);
 		pipeline.annotate(document);
 		List<CoreMap> sentences = document.get(CoreAnnotations.SentencesAnnotation.class);
+		System.out.println(sentences.toString());
 		for (CoreMap sentence : sentences) {
 		    String sentiment = sentence.get(SentimentCoreAnnotations.SentimentClass.class);
 		    System.out.println("Sentiment of the sentence: " + sentiment);

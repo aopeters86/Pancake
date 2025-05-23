@@ -89,7 +89,8 @@ public class Run implements BatterInitialization{
 			selectMode(runQty);
 		}
 		if (userIn == 2) {
-			tester.sentimentGetter();
+			tester.sentimentGetter("The tacos were bad all");
+//					+ " were very good but the overall value was ok");
 			MachineInitialization.powerOff();
 		}
 		
